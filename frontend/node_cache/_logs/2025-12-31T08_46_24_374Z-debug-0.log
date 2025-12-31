@@ -1,0 +1,19 @@
+0 verbose cli C:\Program Files\EVM\04-node\node.exe C:\Program Files\EVM\04-node\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.14.0
+3 silly config load:file:C:\Program Files\EVM\04-node\node_modules\npm\npmrc
+4 silly config load:file:D:\01-Code-Projects\python\frontend\.npmrc
+5 silly config load:file:C:\Users\22684\.npmrc
+6 silly config load:file:D:\01-Code-Projects\python\frontend\node_global\etc\npmrc
+7 verbose title npm view @anthropic-ai/claude-code@latest version
+8 verbose argv "view" "@anthropic-ai/claude-code@latest" "version" "--prefer-online"
+9 verbose logfile logs-max:10 dir:D:\01-Code-Projects\python\frontend\node_cache\_logs\2025-12-31T08_46_24_374Z-
+10 verbose logfile D:\01-Code-Projects\python\frontend\node_cache\_logs\2025-12-31T08_46_24_374Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/@anthropic-ai%2fclaude-code 341ms (cache miss)
+13 verbose cwd D:\01-Code-Projects\python\frontend
+14 verbose os Windows_NT 10.0.26100
+15 verbose node v22.14.0
+16 verbose npm  v10.9.2
+17 verbose exit 0
+18 info ok

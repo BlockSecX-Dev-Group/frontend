@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Binance-style black and gold color scheme */
+    --background: 0 0% 7%; /* Deep black background */
+    --foreground: 45 100% 70%; /* Golden text */
+    --card: 0 0% 10%; /* Card background */
+    --card-foreground: 45 100% 70%; /* Card text */
+    --popover: 0 0% 10%;
+    --popover-foreground: 45 100% 70%;
+    --primary: 45 100% 60%; /* BNB Gold */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 100% 70%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 100% 50%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Binance-style button */
+.binance-button {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  @apply h-10 py-2 px-4;
+}
+
+.binance-button-outline {
+  @apply border border-primary text-primary hover:bg-primary hover:text-primary-foreground;
+  @apply h-10 py-2 px-4 rounded-md inline-flex items-center justify-center text-sm font-medium transition-colors;
+}
+
+/* Golden gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #f0b90b 0%, #ffd700 50%, #f0b90b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation */
+.floating-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Zebra stripe progress bar animation */
+.animate-stripe-move {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 30px 30px;
+  animation: stripe-move 1s linear infinite;
+}
+
+@keyframes stripe-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+
+/* Progress bar zebra stripe background pattern */
+.bg-stripe-pattern {
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: stripe-pattern-move 1.5s linear infinite;
+}
+
+@keyframes stripe-pattern-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+/* Golden border */
+.gold-border {
+  border: 2px solid hsl(45, 100%, 60%);
+  box-shadow: 0 0 20px hsla(45, 100%, 60%, 0.3);
+}
+
+/* Black and gold card style */
+.binance-card {
+  background: linear-gradient(135deg, hsl(0, 0%, 10%) 0%, hsl(0, 0%, 15%) 100%);
+  border: 1px solid hsl(45, 100%, 60%);
+  box-shadow: 0 4px 20px hsla(45, 100%, 60%, 0.1);
+}
+
+/* Golden glow shadow */
+.gold-glow {
+  box-shadow: 0 0 30px hsla(45, 100%, 60%, 0.3);
+}
+
+.hero-container {
+  /* Scale ratio (0.90 = 90%, adjust as needed) */
+  transform: scale(0.90);
+  /* Scale from top center to avoid top whitespace */
+  transform-origin: top center;
+  /* Compensate for scaling by reducing bottom margin */
+  margin-bottom: -10%;
+}
+
+.page-container {
+  /* Scale ratio (0.8 = 80%, adjust as needed) */
+  transform: scale(0.8);
+  /* Scale from top center for proper positioning */
+  transform-origin: top center;
+  /* Center container horizontally */
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.binance-card {
+  @apply bg-card border border-border shadow-sm hover:shadow-md transition-all duration-200;
+  background: linear-gradient(135deg, 
+    hsl(var(--card)) 0%, 
+    hsl(var(--card) / 0.95) 100%
+  );
+}
+
+/* Text Gradient Style (if not already defined) */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+/* Ranking specific animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating-badge {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar for ranking list */
+.ranking-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ranking-scroll::-webkit-scrollbar-track {
+  background: hsl(var(--secondary) / 0.3);
+  border-radius: 3px;
+}
+
+.ranking-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 3px;
+}
+
+.ranking-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
+
+/* Prize pool card glow effect */
+.prize-pool-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.prize-pool-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    hsl(var(--primary)), 
+    hsl(var(--accent)), 
+    hsl(var(--primary))
+  );
+  border-radius: inherit;
+  opacity: 0.5;
+  z-index: -1;
+  background-size: 400% 400%;
+  animation: gradient-rotate 5s ease infinite;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Rank medal animations */
+.rank-medal {
+  display: inline-block;
+  animation: medal-shine 3s ease-in-out infinite;
+}
+
+@keyframes medal-shine {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
